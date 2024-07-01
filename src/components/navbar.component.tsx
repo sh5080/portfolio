@@ -12,6 +12,11 @@ const Navbar: React.FC = () => {
           </StyledLink>
         </NavItem>
         <NavItem>
+          <StyledLink to="about" smooth={true} duration={500}>
+            소개
+          </StyledLink>
+        </NavItem>
+        <NavItem>
           <StyledLink to="tech-stack" smooth={true} duration={500}>
             기술 스택
           </StyledLink>
@@ -24,6 +29,11 @@ const Navbar: React.FC = () => {
         <NavItem>
           <StyledLink to="project-description" smooth={true} duration={500}>
             프로젝트 설명
+          </StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="motivation" smooth={true} duration={500}>
+            지원 동기
           </StyledLink>
         </NavItem>
         <NavItem>
