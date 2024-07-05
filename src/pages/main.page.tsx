@@ -39,7 +39,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <FadeInText ref={textRef} className={fadeIn ? "fade-in" : ""}>
-        안녕하세요. 이카운트 ERP 개발에 지원한 김승환 입니다.
+        안녕하세요. 풀스택을 지향하는, 소통하는 개발자 김승환 입니다.
       </FadeInText>
       <AdditionalTextContainer className={showAdditionalText ? "fade-in" : ""}>
         <AdditionalText>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
               </StyledLink>
             </ListItem>
             <ListItem>
-              <StyledLink to="project-description" smooth={true} duration={500}>
+              <StyledLink to="alpha" smooth={true} duration={500}>
                 프로젝트 설명
               </StyledLink>
             </ListItem>

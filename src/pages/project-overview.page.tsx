@@ -1,55 +1,73 @@
 import React from "react";
 import styled from "styled-components";
 import FadeIn from "../components/fade-in.component";
+import { Link as ScrollLink } from "react-scroll";
 
 const ProjectOverview: React.FC = () => {
   return (
     <ProjectOverviewContainer>
-      <h1>프로젝트 개요</h1>
+      <h1>프로젝트 및 성장 개요</h1>
       <Project>
-        <ProjectHeader>
-          <h2>사내 프로젝트: 데이팅 앱서비스 (개발 완료, 8월 릴리즈)</h2>
-          <h2>2024.03 ~ 현재</h2>
-        </ProjectHeader>
+        <ProjectLink to="alpha" smooth={true} duration={500}>
+          <h2>사내 프로젝트: 데이팅 앱서비스 - 알파 (개발 완료, 8월 릴리즈)</h2>
+          <h3>2024.03 ~ 현재</h3>
+        </ProjectLink>
         <ul>
+          <li>동시성 문제 해결 위한 Queue / 웹소켓 채팅 / sse 알림 구현</li>
           <li>크론, sse 서버리스 aws lambda 구축</li>
-          <li>기본적인 api, DB / 웹소켓 채팅 / sse 알림 구현</li>
           <li>React 어드민 웹페이지 프론트 개발</li>
           <li>zira 이용하여 프로젝트 전체 PM</li>
         </ul>
       </Project>
       <Project>
-        <ProjectHeader>
-          <h2>개발 환경 및 인프라, 스터디 창구 세팅</h2>
-          <h2>2024.01 ~ 2024.02</h2>
-        </ProjectHeader>
+        <ProjectLink to="normaltic" smooth={true} duration={500}>
+          <h2>스터디: normaltic segfault 모의해킹 취업반 6기 </h2>
+          <h3>2024.04 ~ 현재</h3>
+        </ProjectLink>
+        <ul>
+          <li>웹해킹 기초, SQL 인젝션 방법, xss 및 CTF 문제풀이</li>
+          <li>현업 모의해킹 보안 대비 프로세스 이해</li>
+        </ul>
+      </Project>
+      <Project>
+        <ProjectLink to="infra-structure" smooth={true} duration={500}>
+          <h2>사내 개발 환경 및 인프라, 스터디 창구 세팅</h2>
+          <h3>2024.01 ~ 2024.02</h3>
+        </ProjectLink>
         <ul>
           <li>
-            신규 프로젝트마다 바로 사용할 Nest / Prisma 및 DB 기본 Schema /
-            React 보일러플레이트
+            신규 프로젝트마다 바로 사용할 Nest / Prisma 및 DB 기본 Schema,
+            보일러플레이트
           </li>
-          <li>AWS VPC 및 Public / Private Subnet, 3tier Architecture</li>
+          <li>
+            AWS VPC 및 Public / Private Subnet, 로드밸런싱 등 3tier Architecture
+          </li>
           <li>Jenkins CI / CD 배포 스크립트</li>
           <li>스웨거 문서 개별 함수</li>
           <li>노션 트러블슈팅 / 레퍼런스 공유할 템플릿</li>
         </ul>
       </Project>
       <Project>
-        <ProjectHeader>
-          <h2>사이드 프로젝트: 데이팅 앱서비스</h2>
-          <h2>2023.11 ~ 2024.01</h2>
-        </ProjectHeader>
+        <ProjectLink to="onlyou" smooth={true} duration={500}>
+          <h2>사이드 프로젝트: 데이팅 앱서비스 - 온리유</h2>
+          <h3>2023.11 ~ 2024.01</h3>
+        </ProjectLink>
         <ul>
-          <li>DB 스키마 정의 및 상세 릴레이션 정리</li>
-          <li>보일러플레이트 세팅 및 Jenkins CI / CD 배포</li>
+          <li>DB 스키마 정의 및 상세 릴레이션 정리, 보일러플레이트 세팅</li>
+          <li>Jenkins CI / CD 배포</li>
           <li>기본적인 api 구현 및 프론트 소통</li>
+          <li>sqs 통한 요청 분산</li>
+          <li>DB 스키마 정의 및 상세 릴레이션 정리</li>
         </ul>
       </Project>
       <Project>
-        <ProjectHeader>
-          <h2>사내 프로젝트: 임산부 스케쥴 관리, 자기점검 앱서비스</h2>
-          <h2>2023.10 ~ 2023.12</h2>
-        </ProjectHeader>
+        <ProjectLink to="orot-plus" smooth={true} duration={500}>
+          <h2>
+            사내 프로젝트: 임산부 스케쥴 관리, 자기점검 앱서비스 - 아이D,
+            오롯플러스
+          </h2>
+          <h3>2023.10 ~ 2023.12</h3>
+        </ProjectLink>
         <ul>
           <li>
             *기존 서비스 API 리팩토링 &rarr; response time 약 22% 가량 개선
@@ -72,7 +90,10 @@ const ProjectOverview: React.FC = () => {
             AWS EC2 3tier Architecture 도입, S3 + Cloudfront, 서명 URL 이용하여
             보안 이슈 해결
           </li>
-          <li>이미지 업데이트시 일부 S3에서 지워지지 않는 이슈 해결</li>
+          <li>
+            이미지 업데이트시 일부 S3에서 지워지지 않는 이슈 해결 / 이미지
+            리사이징
+          </li>
           <li>
             *신규 서비스 소통방식 제안, 전반적인 점검 &rarr; 프론트에서 큰 만족,
             문서화 원함
@@ -110,7 +131,10 @@ const Project = styled.div`
   h2 {
     margin-bottom: 1rem;
   }
-
+  h3 {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
   ul {
     list-style: disc;
     padding-left: 20px;
@@ -123,9 +147,18 @@ const Project = styled.div`
     padding-left: 20px;
   }
 `;
-const ProjectHeader = styled.div`
+const ProjectLink = styled(ScrollLink)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
+
 export default FadeIn(ProjectOverview);

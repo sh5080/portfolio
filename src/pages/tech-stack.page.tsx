@@ -25,12 +25,15 @@ const TechStack: React.FC = () => {
           <li>NOSQL</li>
           <li> Redis (Strong)</li>
           <li>MongoDB / Mongoose (weak)</li>
+          <li>SQS / SMS</li>
+          <li> Nest - Bull / RabbitMQ (weak)</li>
         </ul>
       </Category>
       <Category>
         <h2>Cloud</h2>
         <ul>
           <li>AWS EC2 + ELB / S3 + CloudFront (3-tier architecture)</li>
+          <li>AWS Lambda</li>
         </ul>
       </Category>
       <Category>
