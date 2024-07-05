@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[948],{948:(n,e,t)=>{t.r(e),t.d(e,{default:()=>c});var i,o=t(528),r=(t(43),t(464)),a=t(579);const s=r.Ay.div(i||(i=(0,o.A)(["\n  padding: 20px;\n  max-width: 800px;\n  margin: 0 auto;\n  text-align: center;\n\n  h1 {\n    font-size: 2rem;\n    margin-bottom: 1rem;\n  }\n\n  p {\n    font-size: 1.25rem;\n  }\n"]))),c=()=>(0,a.jsxs)(s,{children:[(0,a.jsx)("h1",{children:"Contact Me"}),(0,a.jsx)("p",{children:"Provide contact information here."})]})}}]);
+//# sourceMappingURL=948.5b975638.chunk.js.map
