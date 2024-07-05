@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
 
 const Navbar: React.FC = () => {
+  const [isProjectsOpen, setProjectsOpen] = useState(false);
+
+  const handleProjectsClick = () => {
+    setProjectsOpen(!isProjectsOpen);
+  };
+
   return (
     <Nav>
       <NavList>
@@ -27,15 +33,39 @@ const Navbar: React.FC = () => {
           </StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink to="project-description" smooth={true} duration={500}>
+          <StyledLink to="" onClick={handleProjectsClick}>
             프로젝트 설명
           </StyledLink>
         </NavItem>
-        <NavItem>
-          <StyledLink to="motivation" smooth={true} duration={500}>
-            지원 동기
-          </StyledLink>
-        </NavItem>
+        {isProjectsOpen && (
+          <>
+            <NavItem className="sub-item">
+              <StyledLink to="alpha" smooth={true} duration={500}>
+                사내: 알파
+              </StyledLink>
+            </NavItem>
+            <NavItem className="sub-item">
+              <StyledLink to="segfault" smooth={true} duration={500}>
+                모의해킹 스터디
+              </StyledLink>
+            </NavItem>
+            <NavItem className="sub-item">
+              <StyledLink to="infra-structure" smooth={true} duration={500}>
+                사내 개발환경 세팅
+              </StyledLink>
+            </NavItem>
+            <NavItem className="sub-item">
+              <StyledLink to="onlyou" smooth={true} duration={500}>
+                사이드: 온리유
+              </StyledLink>
+            </NavItem>
+            <NavItem className="sub-item">
+              <StyledLink to="orot-plus" smooth={true} duration={500}>
+                사내: 아이D, 오롯
+              </StyledLink>
+            </NavItem>
+          </>
+        )}
         <NavItem>
           <StyledLink to="education" smooth={true} duration={500}>
             학력
@@ -48,7 +78,7 @@ const Navbar: React.FC = () => {
 
 const Nav = styled.nav`
   background: #333;
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 200px;
   position: fixed;
@@ -65,6 +95,9 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   margin: 10px 0;
+  &.sub-item {
+    margin-left: 20px;
+  }
 `;
 
 const StyledLink = styled(Link)`
