@@ -16,7 +16,7 @@ const ProjectOverview: React.FC = () => {
           <li>동시성 문제 해결 위한 Queue / 웹소켓 채팅 / sse 알림 구현</li>
           <li>크론, sse 서버리스 aws lambda 구축</li>
           <li>React 어드민 웹페이지 프론트 개발</li>
-          <li>zira 이용하여 프로젝트 전체 PM</li>
+          <li>jira 이용하여 프로젝트 전체 PM</li>
         </ul>
       </Project>
       <Project>
