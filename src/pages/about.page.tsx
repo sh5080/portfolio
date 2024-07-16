@@ -14,7 +14,7 @@ const About: React.FC = () => {
           <ContactInfo>
             <p>Phone: 010-8603-5080</p>
             <p>
-              GitHub:{" "}
+              GitHub:
               <a
                 href="https://github.com/sh5080"
                 target="_blank"
@@ -25,6 +25,12 @@ const About: React.FC = () => {
             </p>
             <p>
               Email: <a href="mailto:prpn97@gmail.com">prpn97@gmail.com</a>
+            </p>
+            <p>
+              blog:
+              <a href="https://prpn97.tistory.com">
+                https://prpn97.tistory.com
+              </a>
             </p>
           </ContactInfo>
         </Info>
