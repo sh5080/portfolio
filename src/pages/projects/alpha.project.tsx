@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import webSocketSseImage from "../../assets/web-socket-sse.png";
+import erdImage from "../../assets/alpha-erd.png";
+
 import FadeIn from "../../components/fade-in.component";
 import {
   Content,
@@ -16,6 +18,12 @@ import {
 } from "./style";
 
 const Alpha: React.FC = () => {
+  const [isErdVisible, setIsErdVisible] = useState(false);
+
+  const toggleErdVisibility = () => {
+    setIsErdVisible(!isErdVisible);
+  };
+
   return (
     <ProjectContainer>
       <ProjectHeader>
@@ -32,6 +40,15 @@ const Alpha: React.FC = () => {
           생성하여 매칭하는 서비스입니다.
         </Paragraph>
       </ProjectDetails>
+      <SubTitle onClick={toggleErdVisibility} style={{ cursor: "pointer" }}>
+        <strong>ERD</strong>
+        <span style={{ marginLeft: "8px" }}>{isErdVisible ? "▲" : "▼"}</span>
+      </SubTitle>
+      {isErdVisible && (
+        <ImageContainer>
+          <img src={erdImage} alt="ERD Diagram" />
+        </ImageContainer>
+      )}
       <br></br>
       <SectionTitle>구현한 내용 및 성과</SectionTitle>
       <Content>
