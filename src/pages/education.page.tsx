@@ -5,6 +5,40 @@ import FadeIn from "../components/fade-in.component";
 const Education: React.FC = () => {
   return (
     <EducationContainer className={"fade-in"}>
+      <h1>경력</h1>
+      <Institution>
+        <h3>(주) 뉴로서킷 | 개발 팀장</h3>
+        <ul>
+          <li>
+            <strong>기간:</strong> 2024.01 - 현재
+          </li>
+        </ul>
+      </Institution>
+      <Institution>
+        <h3>(주) 뉴로서킷 | 백엔드 팀원</h3>
+        <ul>
+          <li>
+            <strong>기간:</strong> 2023.10 - 2023.12
+          </li>
+        </ul>
+      </Institution>
+      <h1>수료</h1>
+      <Institution>
+        <h3>Normaltic Segfault 모의해킹 6기 | 진행중</h3>
+        <ul>
+          <li>
+            <strong>기간:</strong> 2024.04 - 현재
+          </li>
+        </ul>
+      </Institution>
+      <Institution>
+        <h3>엘리스트랙 SW 4기 | 수료</h3>
+        <ul>
+          <li>
+            <strong>기간:</strong> 2023.03 - 2023.06
+          </li>
+        </ul>
+      </Institution>
       <h1>학력</h1>
       <Institution>
         <h3>총신대학교 대학원 | 석사 (중퇴)</h3>
@@ -36,40 +70,6 @@ const Education: React.FC = () => {
           </li>
           <li>
             <strong>기간:</strong> 2017.03 - 2019.02
-          </li>
-        </ul>
-      </Institution>
-      <h1>수료</h1>
-      <Institution>
-        <h3>Normaltic Segfault 모의해킹 6기 | 진행중</h3>
-        <ul>
-          <li>
-            <strong>기간:</strong> 2024.04 - 현재
-          </li>
-        </ul>
-      </Institution>
-      <Institution>
-        <h3>엘리스트랙 SW 4기 | 수료</h3>
-        <ul>
-          <li>
-            <strong>기간:</strong> 2023.03 - 2023.06
-          </li>
-        </ul>
-      </Institution>
-      <h1>경력</h1>
-      <Institution>
-        <h3>(주) 뉴로서킷 | 개발 팀장</h3>
-        <ul>
-          <li>
-            <strong>기간:</strong> 2024.01 - 현재
-          </li>
-        </ul>
-      </Institution>
-      <Institution>
-        <h3>(주) 뉴로서킷 | 백엔드 팀원</h3>
-        <ul>
-          <li>
-            <strong>기간:</strong> 2023.10 - 2023.12
           </li>
         </ul>
       </Institution>
