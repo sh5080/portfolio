@@ -1,45 +1,84 @@
 import React from "react";
 import styled from "styled-components";
 import FadeIn from "../components/fade-in.component";
+import { StrongIcon, StrongIconContainer } from "./projects/style";
+
+const Rating: React.FC<{ level: number }> = ({ level }) => {
+  return (
+    <StrongIconContainer>
+      {[...Array(5)].map((_, i) => (
+        <StrongIcon key={i} filled={i < level}>
+          ●
+        </StrongIcon>
+      ))}
+    </StrongIconContainer>
+  );
+};
 
 const TechStack: React.FC = () => {
   return (
     <TechStackContainer className={"fade-in"}>
       <h1>기술 스택</h1>
-      <Category>
-        <h2>Frontend</h2>
-        <ul>
-          <li>React / TypeScript</li>
-          <li>Recoil / Tailwind (weak)</li>
-        </ul>
-      </Category>
+
       <Category>
         <h2>Backend</h2>
         <ul>
-          <li>Nest / express / TypeScript</li>
+          <li>Frameworks</li>
+          <li>
+            Nest / Express / TypeScript <Rating level={5} />
+          </li>
           <br></br>
           <li>SQL</li>
-          <li>Mysql / Prisma, TypeORM (Strong)</li>
-          <li>Sequelize (weak)</li>
+          <li>
+            Mysql / Prisma, Sequelize, TypeORM
+            <Rating level={5} />
+          </li>
+
           <br></br>
           <li>NOSQL</li>
-          <li> Redis (Strong)</li>
-          <li>MongoDB / Mongoose (weak)</li>
+          <li>
+            Redis <Rating level={4} />
+          </li>
+          <li>
+            MongoDB / Mongoose <Rating level={3} />
+          </li>
           <li>SQS / SMS</li>
-          <li> Nest - Bull / RabbitMQ (weak)</li>
+          <li>
+            Nest - Bull / RabbitMQ <Rating level={1} />
+          </li>
+        </ul>
+      </Category>
+      <Category>
+        <h2>Frontend</h2>
+        <ul>
+          <li>
+            React / TypeScript
+            <Rating level={3} />
+          </li>
+          <li>
+            Recoil / Tailwind
+            <Rating level={3} />
+          </li>
         </ul>
       </Category>
       <Category>
         <h2>Cloud</h2>
         <ul>
-          <li>AWS EC2 + ELB / S3 + CloudFront (3-tier architecture)</li>
-          <li>AWS Lambda</li>
+          <li>
+            AWS EC2 + ELB / S3 + CloudFront (3-tier architecture)
+            <Rating level={5} />
+          </li>
+          <li>
+            AWS Lambda <Rating level={3} />
+          </li>
         </ul>
       </Category>
       <Category>
         <h2>CI / CD</h2>
         <ul>
-          <li>Jenkins, GitHub Workflow / Serverless</li>
+          <li>
+            Jenkins, GitHub Workflow / Serverless <Rating level={4} />
+          </li>
         </ul>
       </Category>
     </TechStackContainer>

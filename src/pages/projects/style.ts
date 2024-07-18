@@ -116,3 +116,13 @@ export const NumberedList = styled.ol`
   list-style-type: decimal;
   margin-left: 20px;
 `;
+
+export const StrongIconContainer = styled.div`
+  display: inline-flex;
+  margin-left: 8px;
+`;
+export const StrongIcon = styled.span<{ filled: boolean }>`
+  margin-right: 4px;
+  color: ${(props) => (props.filled ? "black" : "lightgray")};
+  font-size: 25px;
+`;
