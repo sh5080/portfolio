@@ -10,12 +10,16 @@ const ProjectOverview: React.FC = () => {
       <Project>
         <ProjectLink to="alpha" smooth={true} duration={500}>
           <h2>사내 프로젝트: 데이팅 앱서비스 - 알파 (개발 완료, 8월 릴리즈)</h2>
-          <h3>2024.03 ~ 현재</h3>
+          <h3>2024.03 ~ 2024.07</h3>
         </ProjectLink>
         <ul>
           <li>동시성 문제 해결 위한 Queue / 웹소켓 채팅 / sse 알림 구현</li>
           <li>크론, sse 서버리스 aws lambda 구축</li>
-          <li>React 어드민 웹페이지 프론트 개발</li>
+          <li>
+            Nest 메인서버 개발, 로드밸런싱 + 오토스케일링으로 서버 재가동 및
+            private 인스턴스에 배포
+          </li>
+          <li>React 어드민 웹페이지 프론트 / Nest 서버 개발</li>
           <li>jira 이용하여 프로젝트 전체 PM</li>
         </ul>
       </Project>
