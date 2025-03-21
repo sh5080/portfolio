@@ -8,8 +8,22 @@ const ProjectOverview: React.FC = () => {
     <ProjectOverviewContainer>
       <h1>프로젝트 및 성장 개요</h1>
       <Project>
+        <ProjectLink to="lg" smooth={true} duration={500}>
+          <h2>
+            사내 프로젝트: LG 멤버십 앱 운영, 유지보수 / 백오피스 및 관련 모듈
+            개발
+          </h2>
+          <h3>2024.08 ~ 현재</h3>
+        </ProjectLink>
+        <ul>
+          <li>회당 평균 약 6만건 푸시알림 전송 모듈 개발</li>
+          <li>백오피스 React 웹페이지, Node.js 서버 개발</li>
+          <li>내부망 내 백오피스 서버 배포 및 ci/cd 파이프라인 구축</li>
+        </ul>
+      </Project>
+      <Project>
         <ProjectLink to="alpha" smooth={true} duration={500}>
-          <h2>사내 프로젝트: 데이팅 앱서비스 - 알파 (개발 완료, 8월 릴리즈)</h2>
+          <h2>사내 프로젝트: 데이팅 앱서비스 - 알파</h2>
           <h3>2024.03 ~ 2024.07</h3>
         </ProjectLink>
         <ul>
@@ -26,7 +40,7 @@ const ProjectOverview: React.FC = () => {
       <Project>
         <ProjectLink to="normaltic" smooth={true} duration={500}>
           <h2>스터디: normaltic segfault 모의해킹 취업반 6기 </h2>
-          <h3>2024.04 ~ 현재</h3>
+          <h3>2024.04 ~ 2024.08</h3>
         </ProjectLink>
         <ul>
           <li>웹해킹 기초, SQL 인젝션 방법, xss 및 CTF 문제풀이</li>

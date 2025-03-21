@@ -27,7 +27,7 @@ const Alpha: React.FC = () => {
   return (
     <ProjectContainer>
       <ProjectHeader>
-        <h1>사내 프로젝트 : 데이팅 앱서비스 알파 (Nest.js) - qa 진행중</h1>
+        <h1>사내 프로젝트 : 데이팅 앱서비스 알파 (Nest.js)</h1>
       </ProjectHeader>
       <ProjectDetails>
         <DetailItem>

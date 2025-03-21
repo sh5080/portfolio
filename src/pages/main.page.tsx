@@ -63,7 +63,7 @@ const Home: React.FC = () => {
               </StyledLink>
             </ListItem>
             <ListItem>
-              <StyledLink to="alpha" smooth={true} duration={500}>
+              <StyledLink to="lg" smooth={true} duration={500}>
                 프로젝트 설명
               </StyledLink>
             </ListItem>

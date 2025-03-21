@@ -7,10 +7,18 @@ const Education: React.FC = () => {
     <EducationContainer className={"fade-in"}>
       <h1>경력</h1>
       <Institution>
+        <h3>(유) 프리디소프트 | 개발 팀원</h3>
+        <ul>
+          <li>
+            <strong>기간:</strong> 2024.08 - 현재
+          </li>
+        </ul>
+      </Institution>
+      <Institution>
         <h3>(주) 뉴로서킷 | 개발 팀장</h3>
         <ul>
           <li>
-            <strong>기간:</strong> 2024.01 - 현재
+            <strong>기간:</strong> 2024.01 - 2024.08
           </li>
         </ul>
       </Institution>
@@ -24,15 +32,15 @@ const Education: React.FC = () => {
       </Institution>
       <h1>수료</h1>
       <Institution>
-        <h3>Normaltic Segfault 모의해킹 6기 | 진행중</h3>
+        <h3>Normaltic Segfault 모의해킹 6기</h3>
         <ul>
           <li>
-            <strong>기간:</strong> 2024.04 - 현재
+            <strong>기간:</strong> 2024.04 - 2024.08
           </li>
         </ul>
       </Institution>
       <Institution>
-        <h3>엘리스트랙 SW 4기 | 수료</h3>
+        <h3>엘리스트랙 SW 4기</h3>
         <ul>
           <li>
             <strong>기간:</strong> 2023.03 - 2023.06
