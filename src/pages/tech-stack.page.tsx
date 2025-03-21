@@ -25,12 +25,15 @@ const TechStack: React.FC = () => {
         <ul>
           <li>Frameworks</li>
           <li>
-            Nest / Express / TypeScript <Rating level={5} />
+            Nest.js / Express / TypeScript <Rating level={5} />
+          </li>
+          <li>
+            FastAPI / Python <Rating level={2} />
           </li>
           <br></br>
           <li>SQL</li>
           <li>
-            Mysql / Prisma, Sequelize, TypeORM
+            Mysql, PostgreSQL, Oracle / Prisma, Drizzle, Sequelize, TypeORM
             <Rating level={5} />
           </li>
 
@@ -44,7 +47,7 @@ const TechStack: React.FC = () => {
           </li>
           <li>SQS / SMS</li>
           <li>
-            Nest - Bull / RabbitMQ <Rating level={1} />
+            Nest - Bull / RabbitMQ <Rating level={3} />
           </li>
         </ul>
       </Category>
@@ -52,11 +55,11 @@ const TechStack: React.FC = () => {
         <h2>Frontend</h2>
         <ul>
           <li>
-            React / TypeScript
+            Next.js / React / TypeScript
             <Rating level={3} />
           </li>
           <li>
-            Recoil / Tailwind
+            Zustand / Tailwind
             <Rating level={3} />
           </li>
         </ul>
@@ -77,7 +80,7 @@ const TechStack: React.FC = () => {
         <h2>CI / CD</h2>
         <ul>
           <li>
-            Jenkins, GitHub Workflow / Serverless <Rating level={4} />
+            Jenkins, GitHub Workflow / Serverless, SST <Rating level={4} />
           </li>
         </ul>
       </Category>
