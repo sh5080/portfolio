@@ -18,25 +18,27 @@ import {
 const Onlyou: React.FC = () => {
   return (
     <ProjectContainer>
-      <ProjectHeader>
-        <h1>사이드 프로젝트 : 데이팅 앱서비스 온리유 (Nest.js)</h1>
+      <h1>사이드 프로젝트 : 데이팅 앱서비스 온리유 (Nest.js)</h1>
+      <ProjectHeader style={{ display: "flex", justifyContent: "flex-end" }}>
+        <div>
+          <p>
+            소개 링크{" "}
+            <ProjectHeaderLink
+              href="https://onlyourlove.imweb.me"
+              target="_blank"
+            >
+              https://onlyourlove.imweb.me
+            </ProjectHeaderLink>
+          </p>
 
-        <h2>
-          소개 링크
-          <ProjectHeaderLink
-            href="https://onlyourlove.imweb.me"
-            target="_blank"
-          >
-            https://onlyourlove.imweb.me
-          </ProjectHeaderLink>
-        </h2>
-
-        <h2>
-          배포 페이지 (유료 서비스라 제한되어 있습니다.)
-          <ProjectHeaderLink href="https://onlyou.co.kr/" target="_blank">
-            https://onlyou.co.kr/
-          </ProjectHeaderLink>
-        </h2>
+          <p>
+            배포 페이지{" "}
+            <ProjectHeaderLink href="https://onlyou.co.kr/" target="_blank">
+              https://onlyou.co.kr/
+            </ProjectHeaderLink>
+          </p>
+          <p> (유료 서비스라 제한되어 있습니다.)</p>
+        </div>
       </ProjectHeader>
       <ProjectDetails>
         <DetailItem>

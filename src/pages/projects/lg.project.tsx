@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import webSocketSseImage from "../../assets/web-socket-sse.png";
-import erdImage from "../../assets/alpha-erd.png";
+import React from "react";
 
 import FadeIn from "../../components/fade-in.component";
 import {
   Content,
   DetailItem,
-  ImageContainer,
   Paragraph,
   ProjectContainer,
   ProjectDetails,
@@ -18,12 +15,6 @@ import {
 } from "./style";
 
 const Lg: React.FC = () => {
-  const [isErdVisible, setIsErdVisible] = useState(false);
-
-  const toggleErdVisibility = () => {
-    setIsErdVisible(!isErdVisible);
-  };
-
   return (
     <ProjectContainer>
       <ProjectHeader>
@@ -75,29 +66,36 @@ const Lg: React.FC = () => {
             <strong>백오피스 개발</strong>
           </DetailItem>
           <Paragraph>
-            백오피스에서 회원 / 쿠폰 조회 및 처리, 앱 상태 변경, 푸시발송 및
-            조회 등 기획 니즈 파악하여 기능 구현하고 있습니다.
+            내부망 로컬 온프레미스로 서버를 두고 React, Node.js 모노레포로
+            타입과 스키마를 공유하도록 구현했고, 백오피스에서 회원 / 쿠폰 조회
+            및 처리, 앱 상태 변경, 푸시발송 및 조회 등 기획 니즈 파악하여 기능
+            구현하고 있습니다.
           </Paragraph>
         </SubSection>
         <br></br>
         <SubSection>
           <SubTitleContainer>
             <SubTitle>
-              Oracle 11g / Javascript 및 JS진영 ORM 간의 호환 문제
+              Oracle 11g - Javascript/JS진영 ORM 간 호환 문제 및 ORM 라이브러리
+              수정
             </SubTitle>
           </SubTitleContainer>
-
+          <Paragraph>
+            <a href="https://github.com/sh5080/sequelize-auto/tree/feature/oracle-support">
+              https://github.com/sh5080/sequelize-auto/tree/feature/oracle-support
+            </a>
+          </Paragraph>
           <DetailItem>
             <strong>문제: </strong>
           </DetailItem>
           <Paragraph>
-            기존 솔루션은 인덱스를 bigint로 사용하고 있는데, 데이터를 조회했을
-            때 Javascript의 데이터 Number 타입 범위를 초과하여 정확하지 않은
-            인덱스를 반환하는 오류가 있었습니다. DB에서 넘어오는 순간 숫자가
-            정확하지 않게 반환되었고, bigint를 TO_CHAR 함수로 변환하여 정확한
-            인덱스를 반환하는 방식으로 해결하려 했으나 Oracle 11g 버전에서는
-            사용할 수 없었습니다. ORM을 통해 string타입으로 받아와도 정확한
-            인덱스를 반환하지 않았습니다.
+            기존 솔루션은 인덱스를 bigint크기의 string으로 사용하고 있는데,
+            데이터를 조회했을 때 Javascript의 Number 타입 범위를 초과하여
+            정확하지 않은 인덱스를 반환하는 오류가 있었습니다. DB에서 넘어오는
+            순간 숫자가 정확하지 않게 반환되었고, bigint를 TO_CHAR 함수로
+            변환하여 정확한 인덱스를 반환하는 방식으로 해결하려 했으나 Oracle
+            11g 버전에서는 사용할 수 없었습니다. ORM을 통해 string타입으로
+            받아와도 정확한 인덱스를 반환하지 않았습니다.
           </Paragraph>
           <DetailItem>
             <strong>해결 방안:</strong>
@@ -109,11 +107,12 @@ const Lg: React.FC = () => {
             (ORM에서 Oracle을 지원하기 때문에 타입을 변환하거나 인식하는 정확한
             sql을 세팅할 수 있을 것이라고 생각했습니다.) Oracle을 지원하는 ORM은
             TypeORM, Sequelize가 있었고, 그 중 TypeORM에서는 Oracle에서의 bigint
-            타입을 지원하지 않아 타입 변환이 어려웠고, Sequelize에서는 bigint를
-            지원하여 타입을 그대로 받아올 수 있었습니다. 이 안에서도
-            Sequelize에서는 스키마를 그대로 모델로 pull하는 sequelize-auto
-            라이브러리가 Oracle을 지원하지 않아 라이브러리를 뜯어고쳐서 db
-            스키마를 그대로 가져와서 사용할 수 있었습니다.
+            타입을 지원하지 않아 타입 변환이 어려웠고, Sequelize에서는 Oracle의
+            bigint를 지원하여 타입을 그대로 받아올 수 있었습니다.
+            <br></br> 이 안에서도 Sequelize에서는 스키마를 그대로 모델로
+            pull하는 sequelize-auto 라이브러리가 Oracle을 지원하지 않아
+            라이브러리를 뜯어고쳐서 db 스키마를 그대로 가져와서 사용할 수
+            있었습니다.
           </Paragraph>
         </SubSection>
       </Content>

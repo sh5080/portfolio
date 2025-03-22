@@ -16,6 +16,7 @@ const ProjectOverview: React.FC = () => {
           <h3>2024.08 ~ 현재</h3>
         </ProjectLink>
         <ul>
+          <li>LG 멤버십 앱 운영, api 개발 및 유지보수</li>
           <li>회당 평균 약 6만건 푸시알림 전송 모듈 개발</li>
           <li>백오피스 React 웹페이지, Node.js 서버 개발</li>
           <li>내부망 내 백오피스 서버 배포 및 ci/cd 파이프라인 구축</li>
@@ -74,7 +75,7 @@ const ProjectOverview: React.FC = () => {
           <li>DB 스키마 정의 및 상세 릴레이션 정리, 보일러플레이트 세팅</li>
           <li>Jenkins CI / CD 배포</li>
           <li>기본적인 api 구현 및 프론트 소통</li>
-          <li>sqs 통한 요청 분산</li>
+          <li>aws lambda 통한 요청 분산</li>
           <li>DB 스키마 정의 및 상세 릴레이션 정리</li>
         </ul>
       </Project>
