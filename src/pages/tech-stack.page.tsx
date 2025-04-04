@@ -84,6 +84,17 @@ const TechStack: React.FC = () => {
           </li>
         </ul>
       </Category>
+      <Category>
+        <h2>DevOps</h2>
+        <ul>
+          <li>
+            Docker / Docker Compose <Rating level={3} />
+          </li>
+          <li>
+            Grafana / Loki / Prometheus <Rating level={2} />
+          </li>
+        </ul>
+      </Category>
     </TechStackContainer>
   );
 };
