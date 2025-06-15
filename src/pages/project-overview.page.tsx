@@ -8,6 +8,21 @@ const ProjectOverview: React.FC = () => {
     <ProjectOverviewContainer>
       <h1>프로젝트 및 성장 개요</h1>
       <Project>
+        <ProjectLink to="ndns" smooth={true} duration={500}>
+          <h2>사이드 프로젝트: 내돈내산</h2>
+          <h3>2025.04 ~ 현재</h3>
+        </ProjectLink>
+        <ul>
+          <li>협찬 필터링 기능 구현</li>
+          <li>파이썬에서 Golang으로 마이그레이션</li>
+          <li>별도 라우터 서버를 통한 로드밸런싱</li>
+          <li>
+            AWS Lambda + Eventbridge로 주기적인 prometheus 메트릭 수집 및
+            라우터서버에 서버 상태 전달
+          </li>
+        </ul>
+      </Project>
+      <Project>
         <ProjectLink to="lg" smooth={true} duration={500}>
           <h2>
             사내 프로젝트: LG 멤버십 앱 운영, 유지보수 / 백오피스 및 관련 모듈

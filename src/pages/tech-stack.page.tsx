@@ -23,12 +23,15 @@ const TechStack: React.FC = () => {
       <Category>
         <h2>Backend</h2>
         <ul>
-          <li>Frameworks</li>
+          <li>Language / Frameworks</li>
           <li>
             Nest.js / Express / TypeScript <Rating level={5} />
           </li>
           <li>
-            FastAPI / Python <Rating level={2} />
+            Fiber / Go <Rating level={2} />
+          </li>
+          <li>
+            FastAPI / Python <Rating level={1} />
           </li>
           <br></br>
           <li>SQL</li>
@@ -43,7 +46,7 @@ const TechStack: React.FC = () => {
             Redis <Rating level={4} />
           </li>
           <li>
-            MongoDB / Mongoose <Rating level={3} />
+            MongoDB / Mongoose <Rating level={2} />
           </li>
           <li>SQS / SMS</li>
           <li>
@@ -69,10 +72,13 @@ const TechStack: React.FC = () => {
         <ul>
           <li>
             AWS EC2 + ELB / S3 + CloudFront (3-tier architecture)
-            <Rating level={5} />
+            <Rating level={4} />
           </li>
           <li>
-            AWS Lambda <Rating level={3} />
+            AWS Lambda, GCP Cloud Run <Rating level={3} />
+          </li>
+          <li>
+            Terraform <Rating level={2} />
           </li>
         </ul>
       </Category>
@@ -91,7 +97,7 @@ const TechStack: React.FC = () => {
             Docker / Docker Compose <Rating level={3} />
           </li>
           <li>
-            Grafana / Loki / Prometheus <Rating level={2} />
+            Grafana / Prometheus <Rating level={2} />
           </li>
         </ul>
       </Category>

@@ -40,6 +40,11 @@ const Navbar: React.FC = () => {
         {isProjectsOpen && (
           <>
             <NavItem className="sub-item">
+              <StyledLink to="ndns" smooth={true} duration={500}>
+                사이드: 내돈내산
+              </StyledLink>
+            </NavItem>
+            <NavItem className="sub-item">
               <StyledLink to="lg" smooth={true} duration={500}>
                 사내: LG 멤버십 앱
               </StyledLink>

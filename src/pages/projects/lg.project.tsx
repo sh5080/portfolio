@@ -74,6 +74,24 @@ const Lg: React.FC = () => {
         </SubSection>
         <br></br>
         <SubSection>
+          <SubTitle>
+            aws s3 이미지 업로드 / 이전 이미지 무효화 스크립트
+          </SubTitle>
+          <DetailItem>
+            <strong>문제: </strong>
+          </DetailItem>
+          <Paragraph>
+            이미 백오피스에 이미지 업로드 기능이 있지만, 그와 별도로
+            퍼블리셔측에서 로컬에서 다이렉트로 이미지 업로드를 원하셨고, 이미지
+            무효화 기능이 필요하여 로컬에서 업로드가 가능하도록 구현하였습니다.
+          </Paragraph>
+          <Paragraph>
+            <a href="https://github.com/sh5080/push-manager/blob/master/src/server/src/scripts/s3/upload_images.sh">
+              https://github.com/sh5080/push-manager/blob/master/src/server/src/scripts/s3/upload_images.sh
+            </a>
+          </Paragraph>
+        </SubSection>
+        <SubSection>
           <SubTitleContainer>
             <SubTitle>
               Oracle 11g - Javascript/JS진영 ORM 간 호환 문제 및 ORM 라이브러리
