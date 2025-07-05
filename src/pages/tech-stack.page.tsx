@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import FadeIn from "../components/fade-in.component";
-import { StrongIcon, StrongIconContainer } from "./projects/style";
+import { DetailItem, StrongIcon, StrongIconContainer } from "./projects/style";
 
 const Rating: React.FC<{ level: number }> = ({ level }) => {
   return (
@@ -19,6 +19,14 @@ const TechStack: React.FC = () => {
   return (
     <TechStackContainer className={"fade-in"}>
       <h1>기술 스택</h1>
+      <DetailItem>
+        자신 있는 스택은 다음과 같습니다.
+        <br />
+        5점 만점에 4점 이상은 겪은 트러블슈팅이 많아 자신이 있고, 3점은 겪은
+        경험이 다소 부족할 수 있으나 회사 업무로 사용할 자신이 있습니다. 그
+        아래는 구현 경험은 있으나 바이브코딩 없이 할 수 있다는 자신은 없지만
+        열심히 공부해보겠습니다.
+      </DetailItem>
 
       <Category>
         <h2>Backend</h2>
@@ -28,76 +36,85 @@ const TechStack: React.FC = () => {
             Nest.js / Express / TypeScript <Rating level={5} />
           </li>
           <li>
-            Fiber / Go <Rating level={2} />
+            tRPC / Fastify <Rating level={3} />
+          </li>
+          <li>
+            Fiber / Go <Rating level={3} />
           </li>
           <li>
             FastAPI / Python <Rating level={1} />
           </li>
-          <br></br>
+          <br />
           <li>SQL</li>
           <li>
-            Mysql, PostgreSQL, Oracle / Prisma, Drizzle, Sequelize, TypeORM
+            PostgreSQL, MySQL, Oracle / Prisma, Drizzle, Sequelize, TypeORM{" "}
             <Rating level={5} />
           </li>
+          <br />
+          <li>NoSQL</li>
+          <li>
+            Redis <Rating level={3} />
+          </li>
+          <li>
+            MongoDB / Mongoose <Rating level={3} />
+          </li>
+          <li>
+            DynamoDB <Rating level={2} />
+          </li>
+          <br />
+          <li>Message Queue</li>
+          <li>
+            AWS SQS <Rating level={3} />
+          </li>
+          <li>
+            Nest - Bull / RabbitMQ <Rating level={2} />
+          </li>
+        </ul>
+      </Category>
 
-          <br></br>
-          <li>NOSQL</li>
+      <Category>
+        <h2>Network</h2>
+        <ul>
           <li>
-            Redis <Rating level={4} />
+            Nginx (Reverse Proxy) <Rating level={4} />
           </li>
           <li>
-            MongoDB / Mongoose <Rating level={2} />
+            SSE (EventStream 처리) <Rating level={4} />
           </li>
-          <li>SQS / SMS</li>
           <li>
-            Nest - Bull / RabbitMQ <Rating level={3} />
+            WebSocket (Socket.io 등 활용 경험) <Rating level={3} />
           </li>
         </ul>
       </Category>
+
       <Category>
-        <h2>Frontend</h2>
+        <h2>Architecture</h2>
         <ul>
           <li>
-            Next.js / React / TypeScript
-            <Rating level={3} />
+            VPC 내 Bastion ↔ Private 구성, 3-tier 설계 기반 <Rating level={4} />
           </li>
           <li>
-            Zustand / Tailwind
-            <Rating level={3} />
+            필요에 따라 서버리스(Lambda/Cloud Run) 또는 서버(VM/EC2) 선택하여
+            배포 <Rating level={4} />
           </li>
-        </ul>
-      </Category>
-      <Category>
-        <h2>Cloud</h2>
-        <ul>
           <li>
-            AWS EC2 + ELB / S3 + CloudFront (3-tier architecture)
+            Prometheus + EventBridge 상태 기반 최적 서버 수동 로드밸런싱
             <Rating level={4} />
           </li>
-          <li>
-            AWS Lambda, GCP Cloud Run <Rating level={3} />
-          </li>
-          <li>
-            Terraform <Rating level={2} />
-          </li>
         </ul>
       </Category>
+
       <Category>
-        <h2>CI / CD</h2>
+        <h2>Monitoring</h2>
         <ul>
           <li>
-            Jenkins, GitHub Workflow / Serverless, SST <Rating level={4} />
-          </li>
-        </ul>
-      </Category>
-      <Category>
-        <h2>DevOps</h2>
-        <ul>
-          <li>
-            Docker / Docker Compose <Rating level={3} />
+            AWS CloudWatch <Rating level={3} />
           </li>
           <li>
-            Grafana / Prometheus <Rating level={2} />
+            Prometheus <Rating level={3} />
+          </li>
+          <li>
+            Grafana <Rating level={1} />
           </li>
         </ul>
       </Category>

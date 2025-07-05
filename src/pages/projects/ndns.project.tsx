@@ -11,7 +11,6 @@ import {
   SectionTitle,
   SubSection,
   SubTitle,
-  SubTitleContainer,
 } from "./style";
 
 const Ndns: React.FC = () => {
@@ -30,80 +29,86 @@ const Ndns: React.FC = () => {
               <a href="https://github.com/ndns-dev">깃허브 주소</a>
             </li>
           </ul>
-          블로그 포스트의 협찬여부를 필터링하여 내돈내산 포스트를 추천하는
-          서비스입니다.
+          블로그 포스트의 협찬 여부를 자동 판별하여 내돈내산 포스트를 추천하는
+          서비스입니다. 요즘 후기를 검색하면 협찬받은 포스트가 너무 많아서
+          키워드만 검색해도 진정성 있는 포스트만 확인할 수 있도록 협찬 포스트를
+          걸러내는 기능을 만들게 되었습니다.
+        </Paragraph>
+        <Paragraph>
+          OCR 기반 이미지 분석을 병렬로 처리해야 하는 구조에서, 성능과 멱등성
+          문제를 해결하기 위해 Node.js → Python → Go 언어로 기술 스택을
+          전환하며, 최적화된 분산 설계와 실시간 스트리밍을 통한 응답 개선을
+          구현했습니다.
         </Paragraph>
       </ProjectDetails>
 
       <br></br>
-      <SectionTitle>구현한 내용 및 성과</SectionTitle>
+      <SectionTitle>트러블슈팅 및 기술 선택 근거</SectionTitle>
       <Content>
         <SubSection>
-          <SubTitle>구현 기능</SubTitle>
-          <Paragraph>
-            텍스트, 이미지 분석을 통해 점수를 부여하여 협찬 여부를 판단하도록
-            구현했습니다.
-            <br></br>
-            깃허브에는 api서버, 라우터서버, metrics cron, prometheus, 프론트
-            5가지로 구성되어 있습니다.
-          </Paragraph>
-          <br></br>
+          <SubTitle>문제 인식</SubTitle>
           <DetailItem>
-            <strong>문제: </strong>
+            - Node.js 기반의 OCR 병렬 처리 한계 (OCR 라이브러리의 멱등성 불안정,
+            성능 저하)
+            <br />
+            - Python 전환 후에도 10개의 포스트를 분석하는 데 5~15초 소요
+            <br />- 온프레미스 wsl 기반 환경 등 특정 환경에서 동시 요청이
+            증가하면 OCR 실패 발생
           </DetailItem>
-          <Paragraph>탄력적 ip 사용시의 과금 비용 문제</Paragraph>
-          물론 비용이 많이 드는 것은 아니지만, 비용을 절감할 수 있는 방법들을
-          여러가지 고민하면서 가능하다면 구현하도록 했습니다.
-          <DetailItem>
-            <strong>해결 과정</strong>
-          </DetailItem>
-          <Paragraph>
-            lambda에서 주기적으로 metric수집할 때 ec2 인스턴스의 public ip를
-            조회하여 route53에 dns를 업데이트하는 방식으로 구현했습니다.
-          </Paragraph>
-          <DetailItem>
-            <strong>문제: </strong>
-          </DetailItem>
-          <Paragraph>
-            한번의 api콜 당 포스트를 10개씩 조회하여 분석하는 방식으로 구현했고,
-            10개의 포스트를 분석하는데 무료 인스턴스를 사용시 10초 이상이
-            소요되는 문제가 있었습니다.
-          </Paragraph>
-          <DetailItem>
-            <strong>해결 과정</strong>
-          </DetailItem>
-          <Paragraph>
-            포스트를 분석할 때 이미지 분석이 우선시되어 ocr을 병렬로 처리하여
-            속도를 높이고자 했습니다. 처음에는 ocr을 파이썬으로 구현하는 것이
-            익숙하여 파이썬으로 구현하였고, 병렬로 처리해도 이미지 분석 시간이
-            오래 걸리는 문제가 있어 추후 서버리스로도 사용했을 때 콜드스타트
-            문제를 줄일 수 있도록 초기 기능구현 이후 바로 Golang으로
-            마이그레이션하여 속도를 높이고자 했습니다.
-          </Paragraph>
-          <DetailItem>
-            <strong>개선 방향</strong>
-          </DetailItem>
-          <Paragraph>
-            클라이언트에서 포스트 갯수를 줄이는 방법도 고민했지만, api 요청
-            응답에 대한 속도개선 이외에도 안그래도 느린 속도에 동시성 문제가
-            생겼을 때 무료 인스턴스를 사용하는 상황에서 문제가 발생할 수 있어
-            다음과 같은 방향으로 진행했습니다.
-            <ul>
-              <li>별도 라우터 서버로 분리하여 로드밸런싱 및 부하분산</li>
-              <li>
-                AWS Lambda + Eventbridge로 주기적인 메트릭 수집 및 라우터서버에
-                서버 상태 전달
-              </li>
-              <li>
-                홈서버, vm에 각각 api 컨테이너 여유있게 두고 추후 오토스케일링
-                방향 고려
-              </li>
-              <li>부하시 서버리스 환경으로 전환하여 요청 최적화</li>
-            </ul>
-          </Paragraph>
-          <br></br>
         </SubSection>
-        <br></br>
+
+        <SubSection>
+          <SubTitle>성능 개선</SubTitle>
+          <DetailItem>
+            - OCR의 성능 향상과 멱등성 확보를 위해 Go 언어로 마이그레이션하여,
+            평균 응답 시간을 2~4초 단축
+            <br />
+            - 동일 컨테이너 환경에서도 운영체제(WLS vs Linux) 차이에 따라 OCR
+            실패율 편차가 발생함을 발견
+            <br />- 이를 해결하기 위해 OCR 처리 로직을 AWS Lambda로 분리하여,
+            항상 동일한 실행 환경을 확보하고 동시 처리 성능 문제를 해소
+          </DetailItem>
+        </SubSection>
+
+        <SubSection>
+          <SubTitle>아키텍처 개선</SubTitle>
+          <DetailItem>
+            - GCP VM을 라우터 서버로 두고, EventBridge + Lambda로 각 API 서버의
+            CPU 사용량, 요청 처리 성공률 등 상태를 주기적으로 수집 후 →
+            Prometheus에 전달
+            <br />
+            - 라우터 서버는 Prometheus 메트릭 기반으로 서버 점수 산정 → 상태가
+            양호한 서버로 요청 라우팅
+            <br />- 모든 서버의 실패율이 일정 기준 초과 시 / api요청시 지정한
+            확률대로 서버리스 환경 api + ocr(Cloud Run)으로 자동 fallback 처리
+          </DetailItem>
+        </SubSection>
+
+        <SubSection>
+          <SubTitle>UX 개선</SubTitle>
+          <DetailItem>
+            - OCR 전 본문 체크/이미지 url 협찬 도메인 필터링으로 협찬 문구 확인
+            시 즉시 응답 → 전체 분석 전에도 클라이언트에 결과 일부 표시
+            <br />
+            - SSE로 라우터 서버와 클라이언트 실시간 연결 유지
+            <br />
+            - OCR이 필요한 포스트만 SQS에 적재 → Lambda에서 개별 OCR 수행 → 결과
+            수신 즉시 클라이언트에 전송
+            <br />- 기존 10초 내외 응답 → 2초 내 첫 결과 도착, 전체 UX 대폭 개선
+          </DetailItem>
+        </SubSection>
+
+        <SubSection>
+          <SubTitle>구성 요소</SubTitle>
+          <DetailItem>
+            - Go 기반 API 서버 + Python OCR → Go로 통합
+            <br />
+            - 라우터 서버 + Prometheus + Metrics Cron + Lambda OCR 처리기 + SSE
+            + SQS
+            <br />- 서버리스 환경(Cloud Run)은 과금 고려하여 특정 조건에만
+            한시적 사용
+          </DetailItem>
+        </SubSection>
       </Content>
     </ProjectContainer>
   );

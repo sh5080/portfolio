@@ -39,7 +39,7 @@ const Home: React.FC = () => {
   return (
     <HomeContainer>
       <FadeInText ref={textRef} className={fadeIn ? "fade-in" : ""}>
-        안녕하세요. 풀스택을 지향하는, 소통하는 개발자 김승환 입니다.
+        안녕하세요. 개발을 좋아하는 개발자 김승환 입니다.
       </FadeInText>
       <AdditionalTextContainer className={showAdditionalText ? "fade-in" : ""}>
         <AdditionalText>

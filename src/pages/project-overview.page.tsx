@@ -17,8 +17,12 @@ const ProjectOverview: React.FC = () => {
           <li>파이썬에서 Golang으로 마이그레이션</li>
           <li>별도 라우터 서버를 통한 로드밸런싱</li>
           <li>
-            AWS Lambda + Eventbridge로 주기적인 prometheus 메트릭 수집 및
-            라우터서버에 서버 상태 전달
+            AWS Lambda + EventBridge 기반 주기적 메트릭 수집 및 라우터 서버 상태
+            업데이트
+          </li>
+          <li>
+            프로메테우스 컨테이너 운영 및 API 서버 상태를 웹훅 + 라우터 서버로
+            전송, CPU/메모리/에러율/응답속도 기반 서버 Score 산정 및 정렬
           </li>
         </ul>
       </Project>
