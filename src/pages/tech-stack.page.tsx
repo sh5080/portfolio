@@ -24,8 +24,7 @@ const TechStack: React.FC = () => {
         <br />
         5점 만점에 4점 이상은 겪은 트러블슈팅이 많아 자신이 있고, 3점은 겪은
         경험이 다소 부족할 수 있으나 회사 업무로 사용할 자신이 있습니다. 그
-        아래는 구현 경험은 있으나 바이브코딩 없이 할 수 있다는 자신은 없지만
-        열심히 공부해보겠습니다.
+        아래는 구현 경험은 있으나 부족하여 필요한 상황이 온다면 열심히 공부해보겠습니다.
       </DetailItem>
 
       <Category>
@@ -73,6 +72,18 @@ const TechStack: React.FC = () => {
       </Category>
 
       <Category>
+        <h2>Frontend</h2>
+        <ul>
+          <li>
+            Next.js / React <Rating level={3} />
+          </li>
+          <li>
+            Tailwind CSS <Rating level={3} />
+          </li>
+        </ul>
+      </Category>
+
+      <Category>
         <h2>Network</h2>
         <ul>
           <li>
@@ -105,6 +116,18 @@ const TechStack: React.FC = () => {
       </Category>
 
       <Category>
+        <h2>DevOps</h2>
+        <ul>
+          <li>
+            Docker / Docker Compose <Rating level={3} />
+          </li>
+          <li>
+            Jenkins / Github Workflow <Rating level={3} />
+          </li>
+        </ul>
+      </Category>
+
+      <Category>
         <h2>Monitoring</h2>
         <ul>
           <li>
@@ -112,9 +135,6 @@ const TechStack: React.FC = () => {
           </li>
           <li>
             Prometheus <Rating level={3} />
-          </li>
-          <li>
-            Grafana <Rating level={1} />
           </li>
         </ul>
       </Category>

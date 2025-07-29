@@ -15,7 +15,7 @@ const ProjectOverview: React.FC = () => {
         <ul>
           <li>협찬 필터링 기능 구현</li>
           <li>파이썬에서 Golang으로 마이그레이션</li>
-          <li>별도 라우터 서버를 통한 로드밸런싱</li>
+          <li>별도 라우터 서버를 통한 로드밸런싱, MSA 구조 설계 및 구축</li>
           <li>
             AWS Lambda + EventBridge 기반 주기적 메트릭 수집 및 라우터 서버 상태
             업데이트
@@ -23,6 +23,10 @@ const ProjectOverview: React.FC = () => {
           <li>
             프로메테우스 컨테이너 운영 및 API 서버 상태를 웹훅 + 라우터 서버로
             전송, CPU/메모리/에러율/응답속도 기반 서버 Score 산정 및 정렬
+          </li>
+          <li>
+            Goroutine 기반 병렬 처리, AWS SQS 기반 비동기 처리, 클라이언트에게
+            분석결과 실시간 SSE 알림 전송
           </li>
         </ul>
       </Project>
@@ -38,7 +42,7 @@ const ProjectOverview: React.FC = () => {
           <li>LG 멤버십 앱 운영, api 개발 및 유지보수</li>
           <li>회당 평균 약 6만건 푸시알림 전송 모듈 개발</li>
           <li>백오피스 React 웹페이지, Node.js 서버 개발</li>
-          <li>내부망 내 백오피스 서버 배포 및 ci/cd 파이프라인 구축</li>
+          <li>내부망 내 백오피스 서버, ci/cd 파이프라인 구축 및 운영</li>
         </ul>
       </Project>
       <Project>
