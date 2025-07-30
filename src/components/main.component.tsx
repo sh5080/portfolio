@@ -13,6 +13,7 @@ import SegfaultProject from "../pages/projects/segfault.project";
 import Education from "../pages/education.page";
 import LgProject from "../pages/projects/lg.project";
 import NdnsProject from "../pages/projects/ndns.project";
+import PostaurantProject from "../pages/projects/postaurant.project";
 const MainContent: React.FC = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
 
@@ -72,6 +73,9 @@ const MainContent: React.FC = () => {
       <Section id="project-overview">
         <ProjectOverview />
       </Section>
+      <Section id="postaurant">
+        <PostaurantProject />
+      </Section>  
       <Section id="ndns">
         <NdnsProject />
       </Section>

@@ -43,8 +43,13 @@ const Home: React.FC = () => {
       </FadeInText>
       <AdditionalTextContainer className={showAdditionalText ? "fade-in" : ""}>
         <AdditionalText>
-          가장 최근 프로젝트 <a href="https://www.ndns.site">내돈내산 </a>/{" "}
+          가장 자신있는 프로젝트{" "}
+          <a href="https://www.ndns.site">내돈내산</a> /{" "}
           <a href="https://github.com/ndns-dev">Github</a>
+          <br />
+          가장 최근 NestJS 프로젝트{" "}
+          <a href="https://postaurant.site">블로그 포스트 생성기</a> /{" "}
+          <a href="https://github.com/postaurant">Github</a>
           <br />
           <br />
           지금부터 저에 대해 소개하려 합니다.

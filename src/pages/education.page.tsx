@@ -7,7 +7,7 @@ const Education: React.FC = () => {
     <EducationContainer className={"fade-in"}>
       <h1>경력</h1>
       <Institution>
-        <h3>(유) 프리디소프트 | 개발 팀원</h3>
+        <h3>(유) 프리디소프트 | 백엔드 팀원</h3>
         <ul>
           <li>
             <strong>기간:</strong> 2024.08 - 현재

@@ -8,6 +8,20 @@ const ProjectOverview: React.FC = () => {
     <ProjectOverviewContainer>
       <h1>프로젝트 및 성장 개요</h1>
       <Project>
+        <ProjectLink to="postaurant" smooth={true} duration={500}>
+          <h2>사이드 프로젝트: AI 블로그 포스트 생성기 API</h2>
+          <h3>2025.07 ~ 현재</h3>
+        </ProjectLink>
+        <ul>
+          <li>NestJS와 Fastify 기반 AI 블로그 포스트 생성 API 개발</li>
+          <li>Google Gemini API를 활용한 블로그 포스트 생성</li>
+          <li>다중 이미지 분석 및 템플릿 시스템 구현</li>
+          <li>JWT 기반 인증 시스템과 AWS S3 연동</li>
+          <li>PostgreSQL과 Drizzle ORM을 활용한 데이터 관리</li>
+          <li>Google Cloud Run을 통한 서버리스 배포</li>
+        </ul>
+      </Project>
+      <Project>
         <ProjectLink to="ndns" smooth={true} duration={500}>
           <h2>사이드 프로젝트: 내돈내산</h2>
           <h3>2025.04 ~ 현재</h3>
@@ -30,6 +44,7 @@ const ProjectOverview: React.FC = () => {
           </li>
         </ul>
       </Project>
+
       <Project>
         <ProjectLink to="lg" smooth={true} duration={500}>
           <h2>
